@@ -1,0 +1,23 @@
+﻿<ion-view title="Calendar" ng-controller="calendarDetailCtrl as vm">
+    <ion-content class="has-header">
+        <div class="row">
+            <div class="col col-20">Subject: </div>
+            <div class="col">{{vm.subject}}</div>
+        </div>
+        <div class="row">
+            <div class="col col-20">Date: </div>
+            <div class="col">{{vm.start | date:'MM-dd-yyyy hh-mm'}} to {{vm.end | date:'hh-mm'}}</div>
+        </div>
+        <div class="row">
+            <div class="col col-20">Location: </div>
+            <div class="col">{{vm.location}}</div>
+        </div>
+        <div class="row">
+            <div class="col col-25">Attendees: </div>
+            <div class="col">{{vm.attendees}}</div>
+        </div>
+        <div class="row">
+            <div class="col">{{vm.bodypreview}}</div>
+        </div>
+    </ion-content>
+</ion-view>

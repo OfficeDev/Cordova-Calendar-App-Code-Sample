@@ -1,0 +1,19 @@
+﻿<ion-view title="Calendar" ng-controller="calendarCtrl as vm">
+    <ion-content class="has-header">
+        <ion-list>
+            <ion-item ng-repeat="event in vm.events" type="item-link" item-type="item item-icon-left" ng-href="#/app/calendar/{{event.id}}">
+                {{event.subject}}  <br />
+                <label style="font-family:Calibri; font-size:smaller; color:grey">Start: {{event.start | date:'dd MMMM yyyy @ HH:mm'}}</label>
+                <br />
+                <label style="font-family:Calibri; font-size:smaller; color:grey">End: {{event.end | date:'dd MMMM yyyy @ HH:mm'}}</label>
+                <br />
+                <label style="font-family:Calibri; font-size:smaller; color:grey">Organizer: {{event.organizer.emailAddress.name}}</label>
+
+                <ion-option-button class="button-assertive"
+                                   ng-click="deleteEvent(event)">
+                    Delete
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

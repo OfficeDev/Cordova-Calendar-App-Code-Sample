@@ -1,0 +1,23 @@
+﻿<ion-side-menus ng-controller="layoutCtrl as vm">
+
+    <ion-pane ion-side-menu-content>
+        <ion-nav-bar class="bar-positive">
+            <ion-nav-back-button class="button-clear icon ion-ios7-arrow-back"></ion-nav-back-button>
+            <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+        </ion-nav-bar>
+        <ion-nav-view name="mainContent" animation="slide-left-right"></ion-nav-view>
+    </ion-pane>
+
+    <ion-side-menu side="left">
+        <header class="bar bar-header bar-positive">
+            <h1 class="title">{{vm.userName}}</h1>
+        </header>
+        <ion-content class="has-header">
+            <ion-list>
+                <ion-item nav-clear menu-close ui-sref="app.calendar">Home</ion-item> 
+                <ion-item nav-clear menu-close ui-sref="app.newEvent">New Event</ion-item>                          
+                <ion-item nav-clear menu-close ui-sref="app.sign-out">Sign-out</ion-item>
+            </ion-list>
+    </ion-side-menu>
+
+</ion-side-menus>
