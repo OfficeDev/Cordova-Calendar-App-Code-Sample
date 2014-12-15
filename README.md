@@ -308,15 +308,16 @@ outlookClient.me.calendar.events.getEvents().filter(filterQuery).fetch()
 ### Step 8: Use O365 API to delete event
 Outlook client object can be used to delete event, first get the event which you want to delete using event id and then call delete() on event object to delete the particular event.
 ```javascript
- outlookClient.me.folders.getFolder("Inbox").messages.getMessage(mail.id).fetch()
- .then(function (mail) {
-     // Delete the mail.
-     mail.delete()
-     .then((function (response) {
-          console.log('Mail deleted successfully.');
-      }), function (error) {                            
-          console.log('Fail to delete mail. Error = ' + error.message);                            
-  });
+ // Fetch event with specified event id.
+outlookClient.me.calendar.events.getEvent(event.id).fetch()
+.then(function (event) {
+    // Delete event.
+    event.delete()
+    .then((function (response) {
+         console.log('event deleted successfully.');
+     }).bind(this), function (reason) {         
+          console.log('Fail to delete event. Error = ' + reason.message);
+     });
 });
 ```
 
