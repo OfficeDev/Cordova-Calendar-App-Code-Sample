@@ -322,7 +322,37 @@ outlookClient.me.calendar.events.getEvent(event.id).fetch()
 ```
 
 ### Step 9: Use O365 API to add new event
+Outlook client object can be used to add, update and delete event.
 
+**Create the page to submit the data for creating new event**
+```html
+<ion-view title=" New Event" ng-controller="newEventCtrl as vm">
+    <ion-content class="has-header">
+        <div class="list">
+            <label class="item item-input">              
+                <input type="email" placeholder="To" ng-model="newEvent.toRecipients">
+            </label>
+            <label class="item item-input">               
+                <input type="text" placeholder="Subject" ng-model="newEvent.subject" />
+            </label>
+            <label class="item item-input">               
+                <input type="datetime" placeholder="Start Date & Time [YYYY-MM-DD HH:MM:SS]" ng-model="newEvent.start" />
+            </label>
+             <label class="item item-input ">              
+                 <input type="datetime" placeholder="End Date & Time [YYYY-MM-DD HH:MM:SS]" ng-model="newEvent.end" />
+            </label>
+        </div>
+        <div>
+            <textarea class="item item-input" placeholder="Event body text" style="height:200px;background-color:#FBFBEF" ng-model="newEvent.body"></textarea>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-positive" ng-click="addEvent()">
+                Add Event
+            </button>
+        </div>
+    </ion-content>
+</ion-view>
+```
 
 ### Step 10: Run the app
 
