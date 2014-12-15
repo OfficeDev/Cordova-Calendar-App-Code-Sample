@@ -58,7 +58,7 @@ Select Calendar and click on Permissions... link on right pane and then select '
 
 Click Apply and Ok to set the permission and add O365 API to project. This will add Service folder containing JavaScript libraries to the project.
 
-
+![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/service-folder.png)
 
 In index.html, add the following O365 references in the ``` <head> ``` element.
 ```html
