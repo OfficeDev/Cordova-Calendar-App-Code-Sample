@@ -242,43 +242,43 @@ authContext.getIdToken("https://outlook.office365.com/")
 ```javascript
 var outlookClient = new Microsoft.OutlookServices.Client('https://outlook.office365.com/api/v1.0', authtoken.getAccessTokenFn('https://outlook.office365.com'));
 ```
-### Step 7: Use O365 API to fetch a.) Mails flagged as Important, b.) Unread mails and c.) All mails
+### Step 7: Use O365 API to fetch a.) Today's meeting (event start date equals today), b.) Tomorrow's meeting (event start date equals tomorrow) and c.) All events with start date greater or equal to today
 
-**Fetch all mails flagged as important**
+**a. Fetch today's meeting (event start date equals today)**
 ```javascript
- function getImpMails() {          
- // Filter to fetch all important mails received after 2000-10-20
-var filterQuery = "Importance eq 'High' and DateTimeReceived gt 2000-10-20";
-outlookClient.me.folders.getFolder("Inbox").messages.getMessages().filter(filterQuery)
-.orderBy('Importance,DateTimeReceived desc').fetch()           
- .then(function (mails) {
-   // Get current page. Use getNextPage() to fetch next set of mails.
-   vm.mails = mails.currentPage;
-   $scope.$apply();                   
-  }, function (error) {
-     console.log("Error encountered while fetching mails. Error: " + error.message);
-    });            
- };
+// Get today's date with time parts set to 00.
+var d = new Date();
+var today = new Date();
+today.setHours(0, 0, 0, 0);       
+var filterQuery = 'start gt ' + today.toISOString() + ' and start lt ' + tomorrow.toISOString();           
+           
+// Get events with filter.
+outlookClient.me.calendar.events.getEvents().filter(filterQuery).fetch()
+.then(function (events) {
+   // Get current page. Use getNextPage() to fetch next set of events.
+   vm.events = events.currentPage;
+   $scope.$apply();               
+}); 
 ```
 
-**Fetch all unread mails**
+**b. Fetch tomorrow's meeting (event start date equals tomorrow)**
 ```javascript
-var filterQuery = 'IsRead eq false';
-outlookClient.me.folders.getFolder("Inbox").messages.getMessages().filter(filterQuery).fetch()            
-.then(function (mails) {
-    // Get current page. Use getNextPage() to fetch next set of mails.
-    vm.mails = mails.currentPage;
-    $scope.$apply();                   
- });     
+var d = new Date();
+var today = new Date();
+today.setHours(0, 0, 0, 0);       
+var filterQuery = 'start gt ' + today.toISOString() + ' and start lt ' + tomorrow.toISOString();           
+           
+// Get events with filter.
+outlookClient.me.calendar.events.getEvents().filter(filterQuery).fetch()
+.then(function (events) {
+   // Get current page. Use getNextPage() to fetch next set of events.
+   vm.events = events.currentPage;
+   $scope.$apply();               
+}); 
 ```
-**Fetch all mails**
+**c. Fetch all events with start date greater or equal to today**
 ```javascript
-outlookClient.me.folders.getFolder("Inbox").messages.getMessages().fetch()            
-.then(function (mails) {
-    // Get current page. Use getNextPage() to fetch next set of mails.
-    vm.mails = mails.currentPage;
-    $scope.$apply();                   
- }); 
+ 
 ```
 
 ### Step 8: Use O365 API to delete mail
