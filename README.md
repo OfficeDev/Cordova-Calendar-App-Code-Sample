@@ -278,7 +278,18 @@ outlookClient.me.calendar.events.getEvents().filter(filterQuery).fetch()
 ```
 **c. Fetch all events with start date greater or equal to today**
 ```javascript
- 
+ var d = new Date();
+var today = new Date();
+today.setHours(0, 0, 0, 0);       
+var filterQuery = 'start gt ' + today.toISOString() + ' and start lt ' + tomorrow.toISOString();           
+           
+// Get events with filter.
+outlookClient.me.calendar.events.getEvents().filter(filterQuery).fetch()
+.then(function (events) {
+   // Get current page. Use getNextPage() to fetch next set of events.
+   vm.events = events.currentPage;
+   $scope.$apply();               
+}); 
 ```
 
 ### Step 8: Use O365 API to delete mail
