@@ -76,53 +76,108 @@ In index.html, add the following O365 references in the ``` <head> ``` element.
 - **app.js** contains ui routing to navigate to different pages
 - **service-o365.js** contains utility function to get access token, create Outlook services client object, signout and get user name. This is implemented as Angular factory so that these functions can be exposed as utility function across different pages.
 
-**Sample app.js defining ui routing**
+**app.js defining ui routing**
 ```javascript
-// Layout page
+angular.module("app365", ["ionic"])
+
+.run(function ($ionicPlatform) {
+    $ionicPlatform.ready(function () {
+        if (window.StatusBar) {
+            StatusBar.styleDefault();
+        }
+    });
+})
+
+.config(function ($stateProvider, $urlRouterProvider) {
+
+    $stateProvider
+
+    // Layout page.
     .state('app', {
         abstract: true,
         url: "/app",
         templateUrl: "app/layout/layout.html"
     })
 
-    // Sign-in page
+    // Sign-in page.
      .state('sign-in', {
          url: "/sign-in",
          templateUrl: "app/auth/sign-in.html"
-     })   
+     })
 
-    // Mail list page
-    .state('app.mail', {
-        url: "/mail",
+    // Sign-out page.
+        .state('app.sign-out', {
+            url: "/sign-out",
+            views: {
+                'mainContent': {
+                    templateUrl: "app/auth/sign-out.html"
+                }
+            }
+        })
+
+    // Add new event page.
+    .state('app.newEvent', {
+        url: "/newevent",
         views: {
             'mainContent': {
-                templateUrl: "app/mail/mail-tabs.html"
+                templateUrl: "app/calendar/add-event.html"
             }
         }
     })
 
-    // Mail list containing mails flagged as important
-    .state('app.mail.imp', {
-        url: "/imp/id:important",
+    // Event list page.
+    .state('app.calendar', {
+        url: "/calendar",
         views: {
-            "tab-imp-mail": {
-                templateUrl: "app/mail/mail-list.html"
+            'mainContent': {
+                templateUrl: "app/calendar/calendar-tab.html"
             }
         }
     })
 
-    // Mail detail page
-    .state('app.mail-detail', {
-        url: "/mail/:id",
+    // List of today's event page.
+    .state('app.calendar.today', {
+        url: "/today/id:today",
         views: {
-            'mainContent': {
-                templateUrl: "app/mail/mail-detail.html"
+            "tab-today-calendar": {
+                templateUrl: "app/calendar/calendar-list.html"
             }
         }
-    });   
+    })
+
+    // Event detail page.
+    .state('app.calendar-detail', {
+        url: "/calendar/:id",
+        views: {
+            'mainContent': {
+                templateUrl: "app/calendar/calendar-detail.html"
+            }
+        }
+    })
+
+    // List of tomorrow's event page.
+    .state('app.calendar.tomorrow', {
+        url: "/tomorrow/id:tomorrow",
+        views: {
+            "tab-tomorrow-calendar": {
+                templateUrl: "app/calendar/calendar-list.html"
+            }
+        }
+    })
+
+     // All events list page.
+    .state('app.calendar.all', {
+        url: "/all/id:all",
+        views: {
+            "tab-all-calendar": {
+                templateUrl: "app/calendar/calendar-list.html"
+            }
+        }
+    });
 
     // Navigate to sign-in page when app starts.
     $urlRouterProvider.otherwise('sign-in');
+})
 ```
 **App layout (menu, nav-bar)**
 ```html
