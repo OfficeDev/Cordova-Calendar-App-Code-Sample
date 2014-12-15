@@ -292,9 +292,9 @@ outlookClient.me.calendar.events.getEvents().filter(filterQuery).fetch()
 ```javascript
  var d = new Date();
 var today = new Date();
-today.setHours(0, 0, 0, 0);       
-var filterQuery = 'start gt ' + today.toISOString() + ' and start lt ' + tomorrow.toISOString();           
-           
+today.setHours(0, 0, 0, 0);
+
+var filterQuery = 'start gt ' + today.toISOString(); 
 // Get events with filter.
 outlookClient.me.calendar.events.getEvents().filter(filterQuery).fetch()
 .then(function (events) {
