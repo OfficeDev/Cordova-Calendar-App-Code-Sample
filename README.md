@@ -50,14 +50,14 @@ Follow these steps to add and configure Office 365 APIs by using the Services Ma
 3. At the top of the Services Manager dialog box, choose the Office 365 link, and then choose Register your app. Sign in with a tenant administrator account for your Office 365 developer organization.
 ![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/ServiceManager.png)
 
-### Step 4: Set permissions to O365 mail tenet to grant appropiate access to app
-Select Mail and click on Permissions... link on right pane and then select read and write to user's mail as app will need to perform read and delete mail operation. Similarly if you want your app to send mail then select mail as a user option.
+### Step 4: Set permissions to O365 calendar tenet to grant appropiate access to app
+Select Calendar and click on Permissions... link on right pane and then select 'have full access to users' calendar'. Similarly if you want to give only read access to app, select 'Read users' calendar'.
 
-![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Mail-permission.png)
+![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Calendar-permission.png)
 
 Click Apply and Ok to set the permission and add O365 API to project. This will add Service folder containing JavaScript libraries to the project.
 
-![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/service-folder.png)
+![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Calendar-app-folder.PNG)
 
 In index.html, add the following O365 references in the ``` <head> ``` element.
 ```html
