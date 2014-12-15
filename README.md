@@ -291,7 +291,7 @@ outlookClient.me.calendar.events.getEvents().filter(filterQuery).fetch()
 ```
 **c. Fetch all events with start date greater or equal to today**
 ```javascript
- var d = new Date();
+var d = new Date();
 var today = new Date();
 today.setHours(0, 0, 0, 0);
 
@@ -305,8 +305,8 @@ outlookClient.me.calendar.events.getEvents().filter(filterQuery).fetch()
 }); 
 ```
 
-### Step 8: Use O365 API to delete mail
-Outlook client object can be used to delete mail, first get the mail which you want to delete using mail id and then call delete() on mail object to delete the particular mail. delete() permanently deletes the mail, to move the mail to Deleted Items, use move() function.
+### Step 8: Use O365 API to delete event
+Outlook client object can be used to delete event, first get the event which you want to delete using event id and then call delete() on event object to delete the particular event.
 ```javascript
  outlookClient.me.folders.getFolder("Inbox").messages.getMessage(mail.id).fetch()
  .then(function (mail) {
@@ -320,7 +320,7 @@ Outlook client object can be used to delete mail, first get the mail which you w
 });
 ```
 
-### Step 9: Run the app
+### Step 10: Run the app
 
 1. Select Android and target either as Android Emulator or device. Please note currently Ripple is not supported for O365 auth.
 
