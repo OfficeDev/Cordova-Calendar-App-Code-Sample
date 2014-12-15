@@ -14,7 +14,8 @@ In this tutorial, you'll these steps
 6. Acquire an access token and get the Outlook services client using AngularJS factory
 7. Use O365 API to fetch a.) Today's meeting (event start date equals today), b.) Tomorrow's meeting (event start date equals tomorrow) and c.) All events with start date greater or equal to today
 8. Use O365 API to delete event
-9. Run the app!
+9. Use O365 API to add new event
+10. Run the app!
 
 ![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/login.png)
 ![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Calandar-list.png)
