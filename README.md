@@ -203,18 +203,20 @@ angular.module("app365", ["ionic"])
     </ion-side-menu>
 </ion-side-menus>
 ```
-**Create Mail tab page to show important, unread and all mails under different tabs**
+**Create Calendar tab page to show today's, tomorrow's and all events under different tabs**
 ```html
 <ion-view>
     <ion-tabs class="tabs-positive tabs-icon-top">
-        <ion-tab title="Imp" icon="ion-star" ui-sref="app.mail.imp">
-            <ion-nav-view name="tab-imp-mail"></ion-nav-view>
+        <ion-tab title="Today" icon="ion-star" ui-sref="app.calendar.today">
+            <ion-nav-view name="tab-today-calendar"></ion-nav-view>
         </ion-tab>
-        <ion-tab title="Unread" icon="ion-ios7-email-outline" ui-sref="app.mail.unread">
-            <ion-nav-view name="tab-unread-mail"></ion-nav-view>
+
+        <ion-tab title="Tomorrow" icon="ion-ios7-email-outline" ui-sref="app.calendar.tomorrow">
+            <ion-nav-view name="tab-tomorrow-calendar"></ion-nav-view>
         </ion-tab>
-        <ion-tab title="All" icon="ion-email" ui-sref="app.mail.all">
-            <ion-nav-view name="tab-all-mail"></ion-nav-view>
+
+        <ion-tab title="All" icon="ion-email" ui-sref="app.calendar.all">
+            <ion-nav-view name="tab-all-calendar"></ion-nav-view>
         </ion-tab>
     </ion-tabs>
 </ion-view>
