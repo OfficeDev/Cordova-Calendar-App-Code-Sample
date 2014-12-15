@@ -66,7 +66,7 @@ In index.html, add the following O365 references in the ``` <head> ``` element.
 ```
 **Step 5: Create app folder structure, UI routing and layout using Ionic controls and navigation**
 
-1. Create app folder under project root node. app folder will contain files specific to app. Each UI component which does fetching and binding the data to UI will have corresponding controller much like UI and code behind pattern. For example mail-list.html will show list control to display user mails and mail-list-ctrl.js will contain code to fetch users mail using O365 API.
+1. Create app folder under project root node. app folder will contain files specific to app. Each UI component which does fetching and binding the data to UI will have corresponding controller much like UI and code behind pattern. For example calendar-list.html will show list control to display user events and calendar-list-ctrl.js will contain code to fetch users events using O365 API.
 
 ![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Mail-app-folder.png)
 
