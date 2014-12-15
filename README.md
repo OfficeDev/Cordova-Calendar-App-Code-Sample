@@ -321,6 +321,9 @@ outlookClient.me.calendar.events.getEvent(event.id).fetch()
 });
 ```
 
+### Step 9: Use O365 API to add new event
+
+
 ### Step 10: Run the app
 
 1. Select Android and target either as Android Emulator or device. Please note currently Ripple is not supported for O365 auth.
