@@ -58,7 +58,7 @@ Select Calendar and click on Permissions... link on right pane and then select '
 
 Click Apply and Ok to set the permission and add O365 API to project. This will add Service folder containing JavaScript libraries to the project.
 
-![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Calendar-app-folder.PNG)
+
 
 In index.html, add the following O365 references in the ``` <head> ``` element.
 ```html
@@ -69,7 +69,7 @@ In index.html, add the following O365 references in the ``` <head> ``` element.
 
 1. Create app folder under project root node. app folder will contain files specific to app. Each UI component which does fetching and binding the data to UI will have corresponding controller much like UI and code behind pattern. For example calendar-list.html will show list control to display user events and calendar-list-ctrl.js will contain code to fetch users events using O365 API.
 
-![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Mail-app-folder.png)
+![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Calendar-app-folder.PNG)
 
 **Folder and file detail:**
 - **auth** contains UI and code for signing-in and sign-out
