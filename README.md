@@ -195,7 +195,9 @@ angular.module("app365", ["ionic"])
             <h1 class="title">{{vm.userName}}</h1>
         </header>
         <ion-content class="has-header">
-            <ion-list>                            
+            <ion-list>
+                <ion-item nav-clear menu-close ui-sref="app.calendar">Home</ion-item> 
+                <ion-item nav-clear menu-close ui-sref="app.newEvent">New Event</ion-item>                          
                 <ion-item nav-clear menu-close ui-sref="app.sign-out">Sign-out</ion-item>
             </ion-list>
     </ion-side-menu>
