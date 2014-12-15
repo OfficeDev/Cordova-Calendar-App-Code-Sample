@@ -409,7 +409,6 @@ Outlook client object can be used to add, update and delete event.
         };
     };
 })();
-
 ```
 
 ### Step 10: Run the app
