@@ -272,6 +272,12 @@ d.setDate(d.getDate() + 1);
 var tomorrow = d;
 tomorrow.setHours(0, 0, 0, 0);
 
+// Get day after tomorrow date with time parts set to 00.
+var dd = new Date();
+dd.setDate(dd.getDate() + 2);
+var tommorrowNext = dd;
+tommorrowNext.setHours(0, 0, 0, 0);
+
 var filterQuery = 'start gt ' + tomorrow.toISOString() + ' and start lt ' + tommorrowNext.toISOString();          
            
 // Get events with filter.
