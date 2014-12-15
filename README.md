@@ -265,8 +265,14 @@ outlookClient.me.calendar.events.getEvents().filter(filterQuery).fetch()
 ```javascript
 var d = new Date();
 var today = new Date();
-today.setHours(0, 0, 0, 0);       
-var filterQuery = 'start gt ' + today.toISOString() + ' and start lt ' + tomorrow.toISOString();           
+today.setHours(0, 0, 0, 0);
+
+// Get tomorrow's date with time parts set to 00.
+d.setDate(d.getDate() + 1);
+var tomorrow = d;
+tomorrow.setHours(0, 0, 0, 0);
+
+var filterQuery = 'start gt ' + tomorrow.toISOString() + ' and start lt ' + tommorrowNext.toISOString();          
            
 // Get events with filter.
 outlookClient.me.calendar.events.getEvents().filter(filterQuery).fetch()
