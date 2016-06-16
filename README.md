@@ -17,9 +17,9 @@ In this tutorial, you'll these steps
 9. Use O365 API to add new event
 10. Run the app!
 
-![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/login.png)
-![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Calandar-list.png)
-![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/New-event.png)
+![Application login page](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/login.png)
+![Application calendar view](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Calandar-list.png)
+![Application calendar event detail page](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/New-event.png)
 
 ### Step 1: Create Blank Codrova using Visual Studio
 Create a new Cordova project in Visual Studio by choosing File --> New project --> JavaScript --> Apache Cordova Apps --> Blank App template. This sample uses JavaScript code, but you can also write your Cordova app in TypeScript.
@@ -29,7 +29,7 @@ Create a new Cordova project in Visual Studio by choosing File --> New project -
 2.	Extract the zip
 3.	Create new folder named lib under Cordova project in Visual Studio solution explorer and copy the extracted content under lib folder.
 
-![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Ionic.png)
+![Folder structure for project](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Ionic.png)
 
 **Update the script references**
 - In index.html, add the following Ionic references in the ``` <head> ``` element, after the Cordova and platformOverrides script references.
@@ -49,16 +49,16 @@ Follow these steps to add and configure Office 365 APIs by using the Services Ma
 1. Download and install the Office 365 API tools from the Visual Studio Gallery
 2. On the project node, right click and choose **Add --> Connected Service**
 3. At the top of the Services Manager dialog box, choose the Office 365 link, and then choose Register your app. Sign in with a tenant administrator account for your Office 365 developer organization.
-![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/ServiceManager.png)
+![O365 Services Manager dialog sign in](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/ServiceManager.png)
 
 ### Step 4: Set permissions to O365 calendar tenet to grant appropiate access to app
 Select Calendar and click on Permissions... link on right pane and then select 'have full access to users' calendar'. Similarly if you want to give only read access to app, select 'Read users' calendar'.
 
-![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Calendar-permission.png)
+![O365 permission scopes for calendar dialog](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Calendar-permission.png)
 
 Click Apply and Ok to set the permission and add O365 API to project. This will add Service folder containing JavaScript libraries to the project.
 
-![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/service-folder.png)
+![project folder tree after adding permissions](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/service-folder.png)
 
 In index.html, add the following O365 references in the ``` <head> ``` element.
 ```html
@@ -69,7 +69,7 @@ In index.html, add the following O365 references in the ``` <head> ``` element.
 
 1. Create app folder under project root node. app folder will contain files specific to app. Each UI component which does fetching and binding the data to UI will have corresponding controller much like UI and code behind pattern. For example calendar-list.html will show list control to display user events and calendar-list-ctrl.js will contain code to fetch users events using O365 API.
 
-![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Calendar-app-folder.PNG)
+![project folder tree structure for application](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Calendar-app-folder.PNG)
 
 **Folder and file detail:**
 - **auth** contains UI and code for signing-in and sign-out
@@ -415,7 +415,7 @@ Outlook client object can be used to add, update and delete event.
 
 1. Select Android and target either as Android Emulator or device. Please note currently Ripple is not supported for O365 auth.
 
-![](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Android%20-%20Run.PNG)
+![target platform selection bar](https://github.com/abhikum/mobiledev/blob/gh-pages/O365AppImages/Android%20-%20Run.PNG)
 
 **F5 to run the app**
 
