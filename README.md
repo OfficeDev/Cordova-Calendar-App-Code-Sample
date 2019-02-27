@@ -1,3 +1,14 @@
+---
+topic: sample
+products:
+- Office 365
+- Outlook
+languages:
+- JavaScript
+extensions:
+  contentType: samples
+  createdDate: 12/9/2014 3:58:28 PM
+---
 ## Cordova Calendar Client App
 
 This sample app shows step by step how to create a Cordova app using Ionic framework and O365 Outlook services from scratch.
